@@ -22,11 +22,22 @@ git clone https://github.com/thanhdc-dev/phptest.git
     ```shell
     cd phptest
     cp .env.example .env
+    vi .env
     ```
 
+    ```
+    ...
+    DB_USERNAME=
+    DB_PASSWORD=
+    ...
+    ```
 - Chạy composer
     ```shell
     composer install
+    ```
+- Tạo key passport
+    ```shell
+    php artisan passport:keys
     ```
 ## 3. Nhập dữ liệu mẫu
 
@@ -38,6 +49,8 @@ mysql -u username -p php_test < php_test.sql
 
 ## 4. Test
 
-Tài khoản mẫu
-- email: dev.thanhdc@gmail.com
-- password: 123456
+- Tài khoản mẫu
+    - email: dev.thanhdc@gmail.com
+    - password: 123456
+
+- Link [demo](https://phptest.thanhdc.dev/)

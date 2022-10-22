@@ -68,6 +68,7 @@ CREATE TABLE `oauth_access_tokens` (
 
 LOCK TABLES `oauth_access_tokens` WRITE;
 /*!40000 ALTER TABLE `oauth_access_tokens` DISABLE KEYS */;
+INSERT INTO `oauth_access_tokens` VALUES ('a21c01fd08d38fa9add3788105b1ff3d5eec69d7859aa3a5b4fcb7c6da2a265953288ce06e240fe0',1,2,NULL,'[]',0,'2022-10-22 04:56:23','2022-10-22 04:56:23','2023-10-22 11:56:23');
 /*!40000 ALTER TABLE `oauth_access_tokens` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -118,7 +119,7 @@ CREATE TABLE `oauth_clients` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `oauth_clients_user_id_index` (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -127,6 +128,7 @@ CREATE TABLE `oauth_clients` (
 
 LOCK TABLES `oauth_clients` WRITE;
 /*!40000 ALTER TABLE `oauth_clients` DISABLE KEYS */;
+INSERT INTO `oauth_clients` VALUES (1,NULL,'Laravel Personal Access Client','LMUGe68u7GkODTMVZt1EfbIra00v5MTUbQG6wf88','http://localhost',1,0,0,'2022-10-22 04:55:52','2022-10-22 04:55:52'),(2,NULL,'Laravel Password Grant Client','e2TM5SLlpvDuTTtpbZdwTi9cZbZKa9ZYbuxfw5Yy','http://localhost',0,1,0,'2022-10-22 04:55:52','2022-10-22 04:55:52');
 /*!40000 ALTER TABLE `oauth_clients` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -144,7 +146,7 @@ CREATE TABLE `oauth_personal_access_clients` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `oauth_personal_access_clients_client_id_index` (`client_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -153,6 +155,7 @@ CREATE TABLE `oauth_personal_access_clients` (
 
 LOCK TABLES `oauth_personal_access_clients` WRITE;
 /*!40000 ALTER TABLE `oauth_personal_access_clients` DISABLE KEYS */;
+INSERT INTO `oauth_personal_access_clients` VALUES (1,1,'2022-10-22 04:55:52','2022-10-22 04:55:52');
 /*!40000 ALTER TABLE `oauth_personal_access_clients` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -179,6 +182,7 @@ CREATE TABLE `oauth_refresh_tokens` (
 
 LOCK TABLES `oauth_refresh_tokens` WRITE;
 /*!40000 ALTER TABLE `oauth_refresh_tokens` DISABLE KEYS */;
+INSERT INTO `oauth_refresh_tokens` VALUES ('e82f08663499631145889e94f0326c4ec776bacdba64aa42fc1f6a8e39c99d9603e9ed76df65eefb','a21c01fd08d38fa9add3788105b1ff3d5eec69d7859aa3a5b4fcb7c6da2a265953288ce06e240fe0',0,'2023-10-22 11:56:23');
 /*!40000 ALTER TABLE `oauth_refresh_tokens` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -275,4 +279,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-10-22 14:49:57
+-- Dump completed on 2022-10-22 19:10:10

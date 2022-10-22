@@ -29,6 +29,7 @@ class ProductController extends Controller
     {
         $fromPrice = $request->get('from_price', null);
         $toPrice = $request->get('to_price', null);
+        $perPage = $request->get('per_page', $this->model->getPerPage());
 
         $res = $this->model::withoutTrashed()
             ->where(function($subQuery) use ($fromPrice, $toPrice) {
@@ -40,7 +41,7 @@ class ProductController extends Controller
                 }
             })
             ->paginate($this->model->getPerPage())
-            ->toArray();
+            ->toArray((int)$perPage);
         $res['status'] = true;
         return response()->json($res);
     }
