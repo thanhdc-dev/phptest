@@ -8,7 +8,7 @@
         </ol>
     </nav>
     <div style="margin-left: 10px">
-        <a class="btn btn-success" href="{{ route('products.create') }}">Thêm Mới</a>
+        <a class="btn btn-success" href="{{ route('products.create') }}">Add</a>
     </div>
 </div>
 @endsection
