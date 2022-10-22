@@ -20,7 +20,7 @@ git clone https://github.com/thanhdc-dev/phptest.git
 
 - Copy file .env.example và chỉnh sửa lại thônng tin kết nối CSDL phù hợp (DB_USERNAME, DB_PASSWORD, ...)
     ```shell
-    cp phptest
+    cd phptest
     cp .env.example .env
     ```
 
