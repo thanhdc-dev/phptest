@@ -67,8 +67,7 @@ class ProductController extends Controller
      * @param Product $product
      * @return void
      */
-    function edit($id) {
-        $product = $this->model::findOrFail($id);
+    function edit(Product $product) {
         return view('products.form', compact('product'));
     }
 

@@ -21,7 +21,7 @@ class ProductController extends Controller
     }
 
     /**
-     * Display a listing of the resource.
+     * Get product list
      *
      * @return \Illuminate\Http\Response
      */

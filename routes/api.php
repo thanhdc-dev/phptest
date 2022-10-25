@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,16 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
 Route::group(['prefix' => 'auth'], function() {
+    // Login
     Route::post('login', 'AuthController@login');
+    // Refresh token
     Route::post('refresh-token', 'AuthController@refreshToken');
 
     Route::group(['middleware' => 'auth:api'], function() {
+        // Logout
         Route::delete('logout', 'AuthController@logout');
     });
 });
-Route::get('products', 'API\ProductController@index')->middleware('auth:api');
+
+// Get products
+Route::get('products', 'ProductController@index')->middleware('auth:api');
 
